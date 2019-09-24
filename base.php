@@ -84,7 +84,7 @@
             $this->lUser = $aUser;
             $this->lPwd = $aPwd;
             $this->lSqlDb = $aSqlDb;
-            $this->Initialise($aTableA,$aTableB)
+            $this->Initialise($aTableA,$aTableB);
         }
 
         private function Initialise($aTableA,$aTableB)
@@ -94,12 +94,12 @@
 
             if (!TableExist($aTableA))
             {
-                CreateTable($aTableA) ? : die("Table creation error!")
+                CreateTable($aTableA) ? : die("Table creation error!");
             }
 
             if (!TableExist($aTableB))
             {
-                CreateTable($aTableB) ? : die("Table creation error!")
+                CreateTable($aTableB) ? : die("Table creation error!");
             }
         }
 
@@ -149,46 +149,46 @@
 
         public function AddUser(User $user)
         {
-            $lQuery = ""
+            $lQuery = "";
             $this->DbQuery($lQuery,false);
         }
 
         public function GetUser(User $user)
         {
-            $lQuery = ""
+            $lQuery = "";
             $this->DbQuery($lQuery,true);
         }
 
         public function LinkUser(User $accountHolder, User $user)
         {
             // set two established users as friends
-            $lQuery = ""
+            $lQuery = "";
             $this->DbQuery($lQuery,false);
         }
 
         public function UnlinkUser(User $accountHolder, User $user)
         {
             // unfriend two established users
-            $lQuery = ""
+            $lQuery = "";
             $this->DbQuery($lQuery,false);
         }
 
         public function GetAllNonFriends(User $user)
         {
-            $lQuery = ""
+            $lQuery = "";
             $this->DbQuery($lQuery,true);
         }
 
         public function GetAllNonFriendsMutualConnections(User $user)
         {
             // unsure about this function
-            $lQuery = ""
+            $lQuery = "";
             $this->DbQuery($lQuery,true);
         }
 
         public function GetAllFriends(User $user)
         {
-            $lQuery = ""
+            $lQuery = "";
             $this->DbQuery($lQuery,true);
         }
     }
