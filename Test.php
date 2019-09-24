@@ -8,10 +8,9 @@ if (!class_exists('\PHPUnit\Framework\TestCase')) {
 include 'index.php';
 
 Class Test extends PHPUnit_Framework_TestCase{
-	public function test_check_random_number_function(){
-		$home = new Home();
-		$random = $home->get_random_number();
-		$check = ($random <= 10 && $random >=5) ? true : false;
-		$this->assertEquals($check, true);
+	public function testDb(){
+		$db = new Database("127.0.0.1","root","","fbook","friends","myfriends");
+		$check = true;
+        $this->assertEquals($check, true);
 	}
 }

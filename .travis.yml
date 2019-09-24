@@ -6,7 +6,9 @@ dist: trusty
 services:
   - mysql
 
-# list any PHP version you want to test against
+before_install: 
+- mysql -e 'CREATE DATABASE IF NOT EXISTS fbook;'
+
 php:
   - "7.0"
   - "5.6"
