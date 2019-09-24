@@ -10,7 +10,6 @@ before_install:
 - mysql -e 'CREATE DATABASE IF NOT EXISTS fbook;'
 
 php:
-  - "7.0"
   - "5.6"
 
 script: phpunit Test.php

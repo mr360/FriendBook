@@ -5,7 +5,7 @@ if (!class_exists('\PHPUnit\Framework\TestCase')) {
     class_alias('\PHPUnit_Framework_TestCase', '\PHPUnit\Framework\TestCase');
 }
 
-include 'index.php';
+include 'base.php';
 
 Class Test extends PHPUnit_Framework_TestCase{
 	public function testDb(){
