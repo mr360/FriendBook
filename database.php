@@ -1,62 +1,6 @@
 <?php
-/*
-    GetFriendList : List<User>
-    GetFriendCount : int
-    IsFriend(User) : bool
-    RemoveFriend(User) : bool
-    AddFriend(User) : bool
-*/
-    class User
-    {
-        private $lName;
-        private $lEmail;
-        private $lPassword;
-
-        private $lFriendList = array();
-
-        public function __construct($aName, $aEmail, $aPassword)
-        {
-            $this->lName = $aName;
-            $this->lEmail = $aEmail;
-            $this->lPassword = $aPassword;
-        }
-
-        public function GetFriendList()
-        {
-            //call db to get this and set the lFriendList array
-        }
-
-        public function GetFriendCount()
-        {
-           return count($this->lFriendList);
-        }
-
-        public function IsFriend(User $user)
-        {
-            foreach($friend as $lFriendList)
-            {
-                if ($friend === $user) return true;
-            }
-
-            return false;
-        }
-
-        public function RemoveFriend(User $friend)
-        {
-            // call is friend 
-            // call db->unlinkUser()
-     
-        }
-
-        public function AddFriend(User $friend)
-        {
-            // call is friend 
-            // add the friend to db  db->linkUser
-        }
-    }
-
     /*
-    Database 
+Database 
     CreateTable : bool
     
     AddUser(User) : bool
@@ -129,12 +73,14 @@
         }
 
         private function TableExist($aTable) {
+            $lData = false;
             $lQuery = "DESCRIBE `$aTable`";
-            $this->DbQuery($lQuery,false); 
+            $this->DbQuery($lQuery,$lData); 
         }    
 
         private function CreateTable($aTable)
         {
+            $lData = false;
             $lQuery = "create table $aTable (
                 friend_id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
                 friend_email varchar(10) NOT NULL,
@@ -144,89 +90,59 @@
                 num_of_friends int(11) NOT NULL
                 )";
 
-            $this->DbQuery($lQuery,false);
+            $this->DbQuery($lQuery,$lData);
         }
 
         public function AddUser(User $user)
         {
+            $lData = false;
             $lQuery = "";
-            $this->DbQuery($lQuery,false);
+            $this->DbQuery($lQuery,$lData);
         }
 
         public function GetUser(User $user)
         {
+            $lData = true;
             $lQuery = "";
-            $this->DbQuery($lQuery,true);
+            $this->DbQuery($lQuery,$lData);
         }
 
         public function LinkUser(User $accountHolder, User $user)
         {
+            $lData = false;
             // set two established users as friends
             $lQuery = "";
-            $this->DbQuery($lQuery,false);
+            $this->DbQuery($lQuery,$lData);
         }
 
         public function UnlinkUser(User $accountHolder, User $user)
         {
+            $lData = false;
             // unfriend two established users
             $lQuery = "";
-            $this->DbQuery($lQuery,false);
+            $this->DbQuery($lQuery,$lData);
         }
 
         public function GetAllNonFriends(User $user)
         {
+            $lData = true;
             $lQuery = "";
-            $this->DbQuery($lQuery,true);
+            $this->DbQuery($lQuery,$lData);
         }
 
         public function GetAllNonFriendsMutualConnections(User $user)
         {
+            $lData = true;
             // unsure about this function
             $lQuery = "";
-            $this->DbQuery($lQuery,true);
+            $this->DbQuery($lQuery,$lData);
         }
 
         public function GetAllFriends(User $user)
         {
+            $lData = true;
             $lQuery = "";
-            $this->DbQuery($lQuery,true);
+            $this->DbQuery($lQuery,$lData);
         }
     }
-
 ?>
-
-/*
-Authenticate
-    Login(User) : bool
-    Register(User) : bool
-    Logout() : bool
-    SetSession 
-    KillSession
-
-Database 
-    CreateTable : bool
-    
-    AddUser(User) : bool
-    GetUser(User) : User
-    
-    LinkUsers(User,User) : bool
-    UnlinkUsers(User,User) : bool
-
-    GetAllNonFriends(User) : List<User>
-    GetAllNonFriendsMutualConnections
-
-UserList
-    AvailableFriend(User) : List<User>
-
-User
-    GetFriendList : List<User>
-    GetFriendCount : int
-    IsFriend(User) : bool
-    RemoveFriend(User) : bool
-    AddFriend(User) : bool
-
-IO 
-    Validate
-    Redirect??
-
-*/
