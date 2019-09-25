@@ -36,12 +36,12 @@ Database
             $this->lTableA = $aTableA;
             $this->lTableB = $aTableB;
 
-            if (!TableExist($aTableA))
+            if (!$this->TableExist($aTableA))
             {
                 $this->CreateTable($aTableA) ? : die("Table creation error!");
             }
 
-            if (!TableExist($aTableB))
+            if (!$this->TableExist($aTableB))
             {
                 $this->CreateTable($aTableB) ? : die("Table creation error!");
             }
