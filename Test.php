@@ -10,8 +10,8 @@ include 'database.php';
 Class Test extends PHPUnit_Framework_TestCase{
 	public function testDb(){
 		$db = new Database("127.0.0.1","root","","fbook","friends","myfriends");
-		$check = true;
-        $this->assertEquals($check, true);
+		$exist = $db->TableExist("friend") && $db->TableExist("myfriends");
+        $this->assertEquals($exist, true);
 	}
 
 	// Test create tables

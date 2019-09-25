@@ -72,10 +72,10 @@ Database
             return false;	
         }
 
-        private function TableExist($aTable) {
+        public function TableExist($aTable) {
             $lData = false;
             $lQuery = "DESCRIBE `$aTable`";
-            $this->DbQuery($lQuery,$lData); 
+            return $this->DbQuery($lQuery,$lData); 
         }    
 
         private function CreateTable($aTable)
@@ -90,21 +90,21 @@ Database
                 num_of_friends int(11) NOT NULL
                 )";
 
-            $this->DbQuery($lQuery,$lData);
+            return $this->DbQuery($lQuery,$lData);
         }
 
         public function AddUser(User $user)
         {
             $lData = false;
             $lQuery = "";
-            $this->DbQuery($lQuery,$lData);
+            return $this->DbQuery($lQuery,$lData);
         }
 
         public function GetUser(User $user)
         {
             $lData = true;
             $lQuery = "";
-            $this->DbQuery($lQuery,$lData);
+            return $this->DbQuery($lQuery,$lData);
         }
 
         public function LinkUser(User $accountHolder, User $user)
@@ -112,7 +112,7 @@ Database
             $lData = false;
             // set two established users as friends
             $lQuery = "";
-            $this->DbQuery($lQuery,$lData);
+            return $this->DbQuery($lQuery,$lData);
         }
 
         public function UnlinkUser(User $accountHolder, User $user)
@@ -120,14 +120,14 @@ Database
             $lData = false;
             // unfriend two established users
             $lQuery = "";
-            $this->DbQuery($lQuery,$lData);
+            return $this->DbQuery($lQuery,$lData);
         }
 
         public function GetAllNonFriends(User $user)
         {
             $lData = true;
             $lQuery = "";
-            $this->DbQuery($lQuery,$lData);
+            return $this->DbQuery($lQuery,$lData);
         }
 
         public function GetAllNonFriendsMutualConnections(User $user)
@@ -135,14 +135,14 @@ Database
             $lData = true;
             // unsure about this function
             $lQuery = "";
-            $this->DbQuery($lQuery,$lData);
+            return $this->DbQuery($lQuery,$lData);
         }
 
         public function GetAllFriends(User $user)
         {
             $lData = true;
             $lQuery = "";
-            $this->DbQuery($lQuery,$lData);
+            return $this->DbQuery($lQuery,$lData);
         }
     }
 ?>
