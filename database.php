@@ -1,4 +1,6 @@
 <?php
+require_once("user.php");
+
     /*
 Database 
     CreateTable : bool
@@ -19,8 +21,8 @@ Database
         private $lPwd;
         private $lSqlDb;
 
-        private $lTableA;
-        private $lTableB;
+        private $lTableA;  // Friend
+        private $lTableB; // Friendlist
         
         public function __construct($aHost,$aUser,$aPwd,$aSqlDb, $aTableA,$aTableB)
         {
@@ -93,21 +95,22 @@ Database
             return $this->DbQuery($lQuery,$lData);
         }
 
-        public function AddUser(User $user)
+        public function AddUser(User $aUser)
         {
             $lData = false;
-            $lQuery = "";
+            $lQuery = "INSERT INTO $this->lTableA (friend_email, password, profile_name,date_started,num_of_friends)
+                                           VALUES ('$aUser->GetEmail()', '$aUser->GetPassword()', '$aUser->GetProfileName()',$aUser->GetCreationDate(),$aUser->GetFriendCount()";
             return $this->DbQuery($lQuery,$lData);
         }
 
-        public function GetUser(User $user)
+        public function GetUser(User $aUser)
         {
             $lData = true;
-            $lQuery = "";
+            $lQuery = "SELECT friend_email, password, profile_name,date_started,num_of_friends FROM $this->lTableA WHERE friend_email=$aUser->GetEmail()";
             return $this->DbQuery($lQuery,$lData);
         }
 
-        public function LinkUser(User $accountHolder, User $user)
+        public function LinkUser(User $aAccountHolder, User $aUser)
         {
             $lData = false;
             // set two established users as friends
@@ -115,7 +118,7 @@ Database
             return $this->DbQuery($lQuery,$lData);
         }
 
-        public function UnlinkUser(User $accountHolder, User $user)
+        public function UnlinkUser(User $aAccountHolder, User $aUser)
         {
             $lData = false;
             // unfriend two established users
@@ -123,14 +126,14 @@ Database
             return $this->DbQuery($lQuery,$lData);
         }
 
-        public function GetAllNonFriends(User $user)
+        public function GetAllNonFriends(User $aUser)
         {
             $lData = true;
-            $lQuery = "";
+            $lQuery = " ";
             return $this->DbQuery($lQuery,$lData);
         }
 
-        public function GetAllNonFriendsMutualConnections(User $user)
+        public function GetAllNonFriendsMutualConnections(User $aUser)
         {
             $lData = true;
             // unsure about this function
@@ -138,7 +141,7 @@ Database
             return $this->DbQuery($lQuery,$lData);
         }
 
-        public function GetAllFriends(User $user)
+        public function GetAllFriends(User $aUser)
         {
             $lData = true;
             $lQuery = "";
