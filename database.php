@@ -38,12 +38,12 @@ Database
 
             if (!TableExist($aTableA))
             {
-                CreateTable($aTableA) ? : die("Table creation error!");
+                $this->CreateTable($aTableA) ? : die("Table creation error!");
             }
 
             if (!TableExist($aTableB))
             {
-                CreateTable($aTableB) ? : die("Table creation error!");
+                $this->CreateTable($aTableB) ? : die("Table creation error!");
             }
         }
 
@@ -52,7 +52,7 @@ Database
         // if not true then no data will be retrieved
         private function DbQuery($aQuery,&$aData)
         {
-            $lConn = @mysqli_connect($host,$user,$pwd,$sql_db);
+            $lConn = @mysqli_connect($this->lHost,$this->lUser,$this->lPwd,$this->lSqlDb);
                     
             if ($lConn) {		
                 $lResult = mysqli_query($lConn, $aQuery);
