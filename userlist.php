@@ -8,15 +8,23 @@ require_once("user.php");
 
 class UserList
 {
-    public function GetAvailableFriend(User $aUser)
+    public static function GetAvailableFriends(User $aUser)
     {
-        //GetAllFriends()
+        // get all the users that are currently not friends with me
+        // return an array of Users
     }
 
-    public function GetAllUser()
+    public static function GetCurrentUserFriends(User $aUser)
     {
-        //Db::GetAllNonFriends()
-        //Db:GetAllNonFriendsWithMutalConnections()
+        // get all the users who are friends with me 
+
+        // return an array of Users
+    }
+
+    public static function GetAllUser()
+    {
+        // Get all the users in the sysetm (including me)
+        // return an array of Users
     }
 }
 ?>

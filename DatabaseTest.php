@@ -9,14 +9,6 @@ include 'database.php';
 
 Class DatabaseTest extends PHPUnit_Framework_TestCase {
 	
-	// Test create tables
-	// Test get user
-	// Test add user
-	// Test link two users
-	// Test unklink two users
-	// Test get user friend list
-	// Test get user list
-
 	/**
 	 * @test
 	 */
