@@ -7,7 +7,7 @@ if (!class_exists('\PHPUnit\Framework\TestCase')) {
 
 include 'database.php';
 
-Class DatabaseTest extends PHPUnit_Framework_TestCase{
+Class Test extends PHPUnit_Framework_TestCase{
 	
 	// Test create tables
 	// Test get user
