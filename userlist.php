@@ -6,6 +6,7 @@ UserList
 <?php
 require_once("user.php");
 
+// Maybe rename to UserManager
 class UserList
 {
     public static function GetAvailableFriends(User $aUser)
