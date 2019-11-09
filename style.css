@@ -1,0 +1,200 @@
+/*
+filename: style.css
+author: xxxxxx xxxxx
+created: 25/08/19
+last modified: 28/08/19
+description: Styling for : All client facing php files.
+*/
+
+/* 
+    Universal Font style and color directive 
+    Source: None
+*/
+* {
+    font-family: calabri, sans-serif;
+    color: #2F4F4F;
+}
+
+/* 
+Navigation Default & Hover Styling 
+Linear-gradient: https://www.w3schools.com/css/css3_gradients.
+Gradient color generation: http://www.cssmatic.com/gradient-generator
+*/
+.menu {
+    display: inline-block;
+}
+
+nav {
+  padding-top: 0.70em;          /* Adds buffer to top of nav/Allows for better view of face.*/
+}
+
+#validationMsg {
+    background: linear-gradient(#cca1aa, #f3cccc);
+    padding: 20px;
+}
+nav a {
+    text-decoration: none;
+    padding: 1.0em 12.5em;      /* Height & Width of Menu*/
+    margin-right: 0.0005em;     /*Individual spacings between the menus*/
+    margin-left: 0.0005em;      /*Individual spacings between the menus*/
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+    color: white;
+    background: linear-gradient(#a90329, #6d0019);
+}
+
+/* Pseudo classes */
+nav a:hover {
+    background: linear-gradient(#7f1f34, #571523);
+    border-color: white;
+}
+
+/*field-set v19*/
+legend {font-size: larger; font-weight:bold;}
+fieldset {max-width: 500px}
+.row {display:table-row;} 
+label {display: table-cell; text-align:right; padding-right:10px; padding-bottom:5px;}
+input {display: table-cell;}
+
+
+/* 
+Header Styles 
+*/
+header {
+    background-image: url("");
+    background-position: 64em,60px,30px,80px;
+    background-repeat: no-repeat;
+    margin-bottom: 35px;
+}
+
+header h3 {
+    margin-top: 2px;
+}
+
+header h1 {
+    margin-bottom: 2px;
+}
+
+/* 
+Footer Styles 
+Sources : NONE
+*/
+footer {
+    height: 50px;
+    border: 0px;        
+}
+
+/* Contextual Selectors (nested items x --> y) */
+footer a, footer p {
+    color: black;
+    text-align: center;
+    font-size: 14px;
+}
+
+/*
+Heading Elements Styling
+Source: None
+*/
+h1 {
+    font: bold normal 25px arial,sans-serif;
+}
+/*
+Table Elements Styling
+Gradient color generation: http://www.cssmatic.com/gradient-generator
+*/  
+table,thead {
+    border-collapse: collapse;
+    border: 1px solid grey;
+}
+
+th,td {
+        padding: 15px;
+
+}
+
+th{
+    background-color: #e2e2e2; 
+}
+
+td {
+    background-color: #fefefe
+}
+
+.dataHead {
+    border-right: 1px solid grey;
+    font-weight: bold;
+    background-color: #e2e2e2;
+}
+
+/*
+Aside Styling
+Source for Transform,Text-Shadow,Color,Box-Shadow : http://red-team-design.com/how-to-create-slick-effects-with-css3-box-shadow/ 
+*/
+aside {
+    width: 25%;       
+    float: right;
+    border: 1px solid red;
+    border-radius: 14px;
+    margin: 1.5em;
+    padding: 1em;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+    color: rgba(0,0,0, .8);
+    text-shadow: 0 1px 0 #fff;
+    background: #ddd;
+    transform: rotate(3deg);     
+}
+
+
+/*
+Definition List Styling
+Source: Modified version of dl.css template
+*/
+dl {
+    border: 1px solid #ccc;
+    padding: 0.33em;
+  }
+  dt {
+    clear: left;
+    float: left;
+    width: 40%;
+    text-align: right;
+    font-weight: bold;
+    color: #e03d3d;
+  }
+  dt::after {
+    content: " :"; 
+  }
+
+  dd {
+    width: 55%;
+    margin-left: 42%;
+  }
+
+/*
+ID Selector About Page Image Border
+Source: 
+*/
+#aboutMeImage {
+    border: 6px double #ccc;
+    clear: right;
+    float: right;
+}
+/*
+Class selector for Table Properties/Colouring
+Source : Center the table via http://stackoverflow.com/questions/9402856/how-to-put-table-in-the-center-of-the-page-using-css  | Answer by: DarkAjax 
+*/
+#timetableTable {
+    text-align: center;
+    margin: 0px auto;
+}
+
+
+#contactEm{
+    text-align: left;
+    font-weight: bold;
+    color: #e03d3d;
+}
+#contactEm a {
+    color: blue;
+}
