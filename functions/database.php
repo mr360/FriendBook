@@ -33,9 +33,11 @@ abstract class Database
         
         $db_selected = mysqli_select_db($lConn,$this->lSqlDb);
                 
-        if ($lConn) {		
+        if ($lConn) 
+        {		
             $lResult = mysqli_query($lConn, $aQuery);
-            if ($lResult) {
+            if ($lResult) 
+            {
                 if ($aData)
                 {
                     $aData = array();
@@ -44,18 +46,15 @@ abstract class Database
                         array_push($aData, $row);  
                     }
                 } 
-                mysqli_close($lConn);
-                return true;
-            } 
-            else {
-                mysqli_close($lConn);
-                return false;
             }
+            mysqli_close($lConn);
+            return $lResult : true ? false;
         }
         return false;	
     }
 
-    public function TableExist($aTable) {
+    public function TableExist($aTable) 
+    {
         $lData = false;
         $lQuery = "DESCRIBE `$aTable`";
         return $this->DbQuery($lQuery,$lData); 
