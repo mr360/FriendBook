@@ -52,7 +52,7 @@
                     <legend>Login</legend>
                     <p class="row">
                         <label for="email">Email</label>
-                        <input type="text" name="email" value="<?php echo (isset($_POST["email"])) ? $_POST["email"] : "Enter email"?>" id="email" />
+                        <input type="text" name="email" value="<?php echo (isset($_POST["email"])) ? IO::Sanitize($_POST["email"]) : "Enter email"?>" id="email" />
                     </p>
                     <p class="row">
                         <label for="password">Password</label>
