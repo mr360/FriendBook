@@ -52,11 +52,11 @@
                     <legend>Register</legend>
                     <p class="row">
                         <label for="email">Email</label>
-                        <input type="text" name="email" value="<?php echo (isset($_POST["email"])) ? $_POST["email"] : "Enter email"?>" id="email" />
+                        <input type="text" name="email" value="<?php echo (isset($_POST["email"])) ? IO::Sanitize($_POST["email"]) : "Enter email"?>" id="email" />
                     </p>
                     <p class="row">
                         <label for="profile">Profile Name</label>
-                        <input type="text" name="profile" value="<?php echo (isset($_POST["profile"])) ? $_POST["profile"] : "Enter Profile name"?>" id="profile" />
+                        <input type="text" name="profile" value="<?php echo (isset($_POST["profile"])) ? Sanitize($_POST["profile"]) : "Enter Profile name"?>" id="profile" />
                     </p>
                     <p class="row">
                         <label for="password">Password</label>
