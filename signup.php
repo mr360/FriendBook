@@ -56,7 +56,7 @@
                     </p>
                     <p class="row">
                         <label for="profile">Profile Name</label>
-                        <input type="text" name="profile" value="<?php echo (isset($_POST["profile"])) ? Sanitize($_POST["profile"]) : "Enter Profile name"?>" id="profile" />
+                        <input type="text" name="profile" value="<?php echo (isset($_POST["profile"])) ? IO::Sanitize($_POST["profile"]) : "Enter Profile name"?>" id="profile" />
                     </p>
                     <p class="row">
                         <label for="password">Password</label>
