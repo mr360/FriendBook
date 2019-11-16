@@ -116,24 +116,16 @@ class FriendDb extends Database
 
     private function UpdateFriendCount($aAccountHolderId,$aUserId, $aMode)
     {
-        $lAction  = "`num_of_friends`"; 
-        
-        if ($aMode === "++")
-        {
-            $lAction = "`num_of_friends`+1";
-        }
-        elseif ($aMode === "--")
-        {
-            $lAction = "`num_of_friends` - 1";
-        }
-
          $lResult = 1;
          $lData = false;
+         $lAction = ($aMode === "++") ? "`num_of_friends`+1" : (($aMode === "--") ? "`num_of_friends` - 1" : "`num_of_friends`");
+         
          $lQuery1 = "UPDATE `friends` SET `num_of_friends`= $lAction WHERE `friend_id` = '".$aUserId."'";
          $lQuery2 = "UPDATE `friends` SET `num_of_friends`= $lAction WHERE `friend_id` = '".$aAccountHolderId."'";
          
          $lResult *= parent::DbQuery($lQuery1,$lData);
          $lResult *= parent::DbQuery($lQuery2,$lData);
+         return $lResult;
     }
 
     public function LinkUser(User $aAccountHolder, User $aUser)
