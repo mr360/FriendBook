@@ -48,7 +48,7 @@ abstract class Database
                 } 
             }
             mysqli_close($lConn);
-            return $lResult : true ? false;
+            return $lResult ? true : false;
         }
         return false;	
     }
